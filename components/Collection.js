@@ -7,6 +7,7 @@ import Sunflower from '@/public/Sunflower.png'
 import Enchanted from '@/public/Enchanted.png'
 import Image from 'next/image'
 import Introduction from './Introduction'
+import HoverImageOverlay from './HoverImageOverlay'
 
 const Data = [
     {
@@ -113,20 +114,31 @@ const Collection = () => {
             </div>
         </div>
       </div>
-      <Introduction
-        title={Data[4].title}
-        description={Data[4].description}
-        price={Data[4].price}
-        src={Data[4].src}
-        classname={"flex flex-col items-center gap-y-14 pt-16 lg:flex-row"}
-      />
-      <Introduction
-        title={Data[5].title}
-        description={Data[5].description}
-        price={Data[5].price}
-        src={Data[5].src}
-        classname={"flex flex-col items-center gap-y-14 lg:flex-row-reverse"}
-      />
+
+      <div className='flex flex-col items-center mx-20 mt-16 lg:flex-row'>
+        <Introduction
+          title={Data[4].title}
+          description={Data[4].description}
+          price={Data[4].price}
+          src={Data[4].src}
+          classname={"flex flex-col items-center"}
+        />
+        <HoverImageOverlay 
+        src="/Rose.png"/>
+      </div>
+      
+      <div className='flex flex-col items-center mb-16 mx-20 lg:flex-row-reverse'>
+        <Introduction
+          title={Data[5].title}
+          description={Data[5].description}
+          price={Data[5].price}
+          src={Data[5].src}
+          classname={"flex flex-col items-center "}
+        />
+        <HoverImageOverlay 
+        src="/Orchid.png"/> 
+      </div>
+
     </div>
   )
 }

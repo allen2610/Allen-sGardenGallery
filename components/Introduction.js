@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
+import HoverImageOverlay from './HoverImageOverlay';
 
 const Introduction = ({title, description, price, src, classname}) => {
   return (
@@ -24,10 +25,10 @@ const Introduction = ({title, description, price, src, classname}) => {
         </div>
       </div>
       <div>
-        <Image
+        {/* <Image
           src={src}  
           width={350}    
-        />
+        /> */}
       </div>
         
     </div>
