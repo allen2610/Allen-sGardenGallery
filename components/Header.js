@@ -4,11 +4,7 @@ import Image from 'next/image'
 
 const Header = () => {
   return (
-    <div className='font-belgian text-white bg-bunga h-[350px] flex flex-col justify-center items-center'>
-        {/* <Image
-            src={HeaderImage}
-            className='w-full h-[350px] relative -z-1' 
-        /> */}
+    <div className='font-belgian text-white bg-bunga h-[350px] flex flex-col justify-center items-center text-center'>
         <h1 className='text-4xl'>
           Where Nature Meets Elegance
         </h1>

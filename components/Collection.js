@@ -51,11 +51,11 @@ const Data = [
 const Collection = () => {
   return (
     <div className='flex flex-col items-center mt-24 font-belgian'>
-      <h1 className='text-2xl'>
+      <h1 className='text-3xl'>
         Collections
       </h1>
-      <button className='my-4'> VIEW ALL </button>
-      <div className='flex flex-col gap-10 lg:flex-row'>
+      <button className='mt-3 mb-10'> VIEW ALL </button>
+      <div className='flex flex-wrap justify-center gap-10'>
         <div className='flex flex-col items-center gap-4'>
             <Image
                 src={Data[0].src}
@@ -118,14 +118,14 @@ const Collection = () => {
         description={Data[4].description}
         price={Data[4].price}
         src={Data[4].src}
-        classname={"flex flex-row"}
+        classname={"flex flex-col items-center gap-y-14 pt-16 lg:flex-row"}
       />
       <Introduction
         title={Data[5].title}
         description={Data[5].description}
         price={Data[5].price}
         src={Data[5].src}
-        classname={"flex flex-row-reverse"}
+        classname={"flex flex-col items-center gap-y-14 lg:flex-row-reverse"}
       />
     </div>
   )

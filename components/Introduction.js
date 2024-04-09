@@ -4,8 +4,8 @@ import Image from 'next/image'
 const Introduction = ({title, description, price, src, classname}) => {
   return (
     <div className={`flex w-[1150px] my-16 justify-between ${classname}`}>
-      <div className='flex flex-col justify-between gap-6'>
-        <div className='flex flex-col gap-6 max-w-[500px]'>
+      <div className='flex flex-col justify-between gap-4'>
+        <div className='flex flex-col gap-6 max-w-[350px] lg:max-w-[500px]'>
             <h1 className='text-lg'>
                 I N T R O D U C I N G
             </h1>
@@ -26,7 +26,7 @@ const Introduction = ({title, description, price, src, classname}) => {
       <div>
         <Image
           src={src}  
-          width={400}    
+          width={350}    
         />
       </div>
         
