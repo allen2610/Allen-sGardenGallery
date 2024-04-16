@@ -8,6 +8,7 @@ import Enchanted from '@/public/Enchanted.png'
 import Image from 'next/image'
 import Introduction from './Introduction'
 import HoverImageOverlay from './HoverImageOverlay'
+import Link from 'next/link'
 
 const Data = [
     {
@@ -57,88 +58,41 @@ const Collection = () => {
       </h1>
       <button className='mt-3 mb-10'> VIEW ALL </button>
       <div className='flex flex-wrap justify-center gap-10'>
-        <div className='flex flex-col items-center gap-4'>
-            <Image
-                src={Data[0].src}
-                width={250}
-            />
-            <div className='text-center flex flex-col max-w-[200px] gap-2'>
-                <p>
-                    {Data[0].title}     
-                </p>
-                <p>
-                    {Data[0].price}
-                </p>
-            </div>
-        </div>
-        <div className='flex flex-col items-center gap-4'>
-            <Image
-                src={Data[1].src}
-                width={250}
-            />
-            <div className='text-center flex flex-col max-w-[200px] gap-2'>
-                <p>
-                    {Data[1].title}     
-                </p>
-                <p>
-                    {Data[1].price}
-                </p>
-            </div>
-        </div>
-        <div className='flex flex-col items-center gap-4'>
-            <Image
-                src={Data[2].src}
-                width={250}
-            />
-            <div className='text-center flex flex-col max-w-[200px] gap-2'>
-                <p>
-                    {Data[2].title}     
-                </p>
-                <p>
-                    {Data[2].price}
-                </p>
-            </div>
-        </div>
-        <div className='flex flex-col items-center gap-4'>
-            <Image
-                src={Data[3].src}
-                width={250}
-            />
-            <div className='text-center flex flex-col max-w-[200px] gap-2'>
-                <p>
-                    {Data[3].title}     
-                </p>
-                <p>
-                    {Data[3].price}
-                </p>
-            </div>
-        </div>
+            {Data.slice(0,4).map((item) => {
+              return(
+                <Link href="/" className='flex flex-col items-center gap-4'>
+                  <Image
+                    src={item.src}
+                    width={250}
+                  />
+                  <div className='text-center flex flex-col max-w-[200px] gap-2'>
+                    <p>
+                        {item.title}     
+                    </p>
+                    <p>
+                        {item.price}
+                    </p>
+                  </div>
+                </Link>
+              )
+            })}
       </div>
 
-      <div className='flex flex-col items-center mx-20 mt-16 lg:flex-row'>
-        <Introduction
-          title={Data[4].title}
-          description={Data[4].description}
-          price={Data[4].price}
-          src={Data[4].src}
-          classname={"flex flex-col items-center"}
-        />
-        <HoverImageOverlay 
-        src="/Rose.png"/>
-      </div>
-      
-      <div className='flex flex-col items-center mb-16 mx-20 lg:flex-row-reverse'>
-        <Introduction
-          title={Data[5].title}
-          description={Data[5].description}
-          price={Data[5].price}
-          src={Data[5].src}
-          classname={"flex flex-col items-center "}
-        />
-        <HoverImageOverlay 
-        src="/Orchid.png"/> 
-      </div>
+      <Introduction
+        title={Data[4].title}
+        description={Data[4].description}
+        price={Data[4].price}
+        src={Data[4].src}
+        classname={"md:flex-row"}
+      />
 
+      <Introduction
+        title={Data[5].title}
+        description={Data[5].description}
+        price={Data[5].price}
+        src={Data[5].src}
+        classname={"md:flex-row-reverse"}
+      />
     </div>
   )
 }

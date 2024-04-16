@@ -1,10 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
 import HoverImageOverlay from './HoverImageOverlay';
+import Rose from '@/public/Rose.png'
 
 const Introduction = ({title, description, price, src, classname}) => {
   return (
-    <div className={`flex w-[1150px] my-16 justify-between ${classname}`}>
+    <div className={`${classname} flex w-[1150px] my-16 justify-between flex-col items-center `}>
       <div className='flex flex-col justify-between gap-4'>
         <div className='flex flex-col gap-6 max-w-[350px] lg:max-w-[500px]'>
             <h1 className='text-lg'>
@@ -25,10 +26,8 @@ const Introduction = ({title, description, price, src, classname}) => {
         </div>
       </div>
       <div>
-        {/* <Image
-          src={src}  
-          width={350}    
-        /> */}
+        <HoverImageOverlay 
+        src={src}/>
       </div>
         
     </div>
